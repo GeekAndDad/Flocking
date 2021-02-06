@@ -17,7 +17,7 @@ extension Renderer {
             let panels = inspector.getPanels()
             for panel in panels {
                 if let label = panel.parameters?.label {
-                    panelOpenStates[label] = panel.isOpen()
+                    panelOpenStates[label] = panel.open
                 }
             }
         }
@@ -43,7 +43,7 @@ extension Renderer {
             for panel in panels {
                 if let label = panel.parameters?.label {
                     if let open = panelOpenStates[label] {
-                        panel.setState(open)
+                        panel.open = open
                     }
                 }
             }
